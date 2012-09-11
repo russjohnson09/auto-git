@@ -13,8 +13,10 @@ def git_options():
     
     
 def input():
-    x = raw_input("To use default config press enter. Else type 1.")
-    if x:
+    str1 = "Press enter to continue with default settings.\n\
+Type 1 and press enter to use your own settings."
+    x = raw_input(str1)
+    if x==1:
         git_options()
     else:
         git_default()
