@@ -11,10 +11,13 @@ def git_default():
 def git_options():
     str1 = raw_input("Input message: ")
     subprocess.call(['git','add','.'])
-    p = subprocess.Popen(['git','commit','m'],stdout=subprocess.PIPE,stdin=subprocess.PIPE)
-    p.stdin.write(str1)
-    p.communicate()[0]
-    p.stdin.close()
+    subprocess.call(['git','commit','-m',str1])
+    #===========================================================================
+    # p = subprocess.Popen(['git','commit','-m'],stdout=subprocess.PIPE,stdin=subprocess.PIPE)
+    # p.stdin.write(str1)
+    # p.communicate()[0]
+    # p.stdin.close()
+    #===========================================================================
     subprocess.call(['git','push','origin','master'])
     
     
@@ -22,7 +25,7 @@ def input():
     str1 = "Press enter to continue with default settings.\n\
 Type 1 and press enter to use your own settings."
     x = raw_input(str1)
-    if x==1:
+    if x=='1':
         git_options()
     else:
         git_default()
