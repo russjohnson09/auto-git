@@ -9,7 +9,13 @@ def git_default():
     subprocess.call(['git','push','origin','master'])
     
 def git_options():
-    pass
+    str1 = raw_input("Input message: ")
+    subprocess.call(['git','add','.'])
+    p = subprocess.Popen(['git','commit','m'],stdout=subprocess.PIPE,stdin=subprocess.PIPE)
+    p.stdin.write(str1)
+    p.communicate()[0]
+    p.stdin.close()
+    subprocess.call(['git','push','origin','master'])
     
     
 def input():
