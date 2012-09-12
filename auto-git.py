@@ -5,7 +5,7 @@ import subprocess
     
 def git_default():
     subprocess.call(['git','add','.'])
-    subprocess.call(['git','commit','-m','"update"'])
+    subprocess.call(['git','commit','-m','update'])
     subprocess.call(['git','push','origin','master'])
     
 def git_options():
